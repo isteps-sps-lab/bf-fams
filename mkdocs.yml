@@ -1,0 +1,42 @@
+site_name: FaMS Docs
+site_url: https://isteps-sps-lab.github.io/bf-fams
+repo_url: https://github.com/isteps-sps-lab/bf-fams
+site_description: Fatigue Monitoring System Documentation
+docs_dir: docs
+site_dir: html
+edit_uri: edit/main/docs/
+markdown_extensions:
+  - toc
+  - fenced_code
+  # - codehilite
+  - admonition
+  - def_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+use_directory_urls: false
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+pages:
+  - Home: 'index.md'
+  - 'Getting Started' : 'getting-started.md'
+  - 'User & Programmers Manual':
+    - 'Architecture' : 'architecture.md'
+    # - 'API' : 'api.md'
+    # - 'User Manual': 'usermanual.md'
+  - 'Installation & Administration Manual':
+    - 'Installation Guide': 'installationguide.md'
