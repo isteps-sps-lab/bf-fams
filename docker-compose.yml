@@ -6,7 +6,9 @@ services:
     image: registry.gitlab.com/isteps-sps-lab/human-robot-interaction/better-factory/stre:0.4
     environment:
       DELAY_THRESHOLD: 2
+      DIGITAL_WORKPLACE_PASSWORD: $BF_PASSWORD
       DIGITAL_WORKPLACE_URL: http://models:8080/rest
+      DIGITAL_WORKPLACE_USER: $BF_USER
       INPUT_TOPIC: EU_HUMANMANUFACTURING_STREIN
       MIDDLEWARE_URL: middleware:9092
       MODEL_FILE: /exec/data/STRE_Dummy
@@ -97,6 +99,10 @@ services:
     restart: on-failure
     volumes:
       - models_db_data:/var/lib/mysql:rw
+
+networks:
+  default:
+    name: betterfactory_chri
 
 volumes:
   message_model:
