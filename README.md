@@ -37,5 +37,4 @@ published on the middleware.
 ## Maintainers
 
 - Vincenzo Cutrona - <vincenzo.cutrona@supsi.ch>
-- Niko Bonomi - <niko.bonomi@supsi.ch>
 - Giuseppe Landolfi - <giuseppe.landolfi@supsi.ch>
