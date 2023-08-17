@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://isteps-sps-lab.github.io/bf-fams/index.html</loc>
+         <lastmod>2023-08-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://isteps-sps-lab.github.io/bf-fams/architecture.html</loc>
+         <lastmod>2023-08-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://isteps-sps-lab.github.io/bf-fams/getting-started.html</loc>
+         <lastmod>2023-08-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://isteps-sps-lab.github.io/bf-fams/installationguide.html</loc>
+         <lastmod>2023-08-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://isteps-sps-lab.github.io/bf-fams/usermanual.html</loc>
+         <lastmod>2023-08-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
