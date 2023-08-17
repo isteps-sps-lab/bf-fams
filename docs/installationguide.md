@@ -26,7 +26,7 @@ While some images are publicly available, some other require credentials to be d
     request for a new token to the RAMP Docker registry maintainers.
 
 Once you are provided with a username and a token, you can issue the following
-command to login to the private GitLab Docker registry and download the images:
+command to login to the RAMP Docker registry and download the images:
 
 ```shell
 docker login docker.ramp.eu -u <username> -p <token>

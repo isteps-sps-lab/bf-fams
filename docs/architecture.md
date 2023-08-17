@@ -8,8 +8,8 @@ below:
 ``` mermaid
 flowchart LR
     classDef supsi fill:#B4C7DC,color:#000;
-    classDef pub fill:#B2B2B2,color:#000;
-    classDef pvt fill:#E8F2A1,color:#000;
+    classDef pvt fill:#B2B2B2,color:#000;
+    classDef pub fill:#E8F2A1,color:#000;
 
     subgraph SUPSI
     direction TB
