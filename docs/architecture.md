@@ -7,9 +7,9 @@ below:
 
 ``` mermaid
 flowchart LR
-    classDef supsi fill:#B4C7DC;
-    classDef pub fill:#B2B2B2
-    classDef pvt fill:#E8F2A1
+    classDef supsi fill:#B4C7DC,color:#000;
+    classDef pub fill:#B2B2B2,color:#000;
+    classDef pvt fill:#E8F2A1,color:#000;
 
     subgraph SUPSI
     direction TB
@@ -27,16 +27,11 @@ flowchart LR
 
 ```
 
-The blue-colored components represent the core components for which SUPSI
-provides and maintains a Docker image; the other components (grey- and
-green-colored) represent dependencies that are provided as Docker images by
-third parties.
+The blue-colored components represent the core components for which SUPSI provides and maintains a Docker image; the other components represent Docker images that are either publicly available (green-colored) or maintened by other Better Factory partners (grey-colored).
 
 !!! info
 
-    In this deployment version, the only external dependencies that is available
-    only in a private registry is *models*. The *models* image is provided and
-    maintained by Holonix (HOL) within the Better Factory project.
+    In this deployment version, all the Docker images but the public ones can be downloaded from the [RAMP Docker Registry](https://docker.ramp.eu/).
 
 ## Dependencies
 
@@ -66,11 +61,6 @@ the *middleware*.
 The *models* component exposes a REST API to access the data model shared among
 all the components involved in the C-HRI scenario. The API is accessed by the
 *fams* component to fetch information about workers and other factory elements.
-
-!!! important
-
-    This image is available in a private Docker registry hosted at GitLab.
-    Please ask HOLONIX to get access to this image.
 
 ### models-db
 The *models-db* component runs an official MySql docker image (v5.7).

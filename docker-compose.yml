@@ -3,22 +3,22 @@ services:
 
   fams:
     container_name: fams
-    image: registry.gitlab.com/isteps-sps-lab/human-robot-interaction/better-factory/stre:0.4
+    image: docker.ramp.eu/supsi-pvt/fatigue-monitoring-system:0.4.3
     environment:
-      DELAY_THRESHOLD: 2
-      DIGITAL_WORKPLACE_PASSWORD: $BF_PASSWORD
-      DIGITAL_WORKPLACE_URL: http://models:8080/rest
-      DIGITAL_WORKPLACE_USER: $BF_USER
-      INPUT_TOPIC: EU_HUMANMANUFACTURING_STREIN
-      MIDDLEWARE_URL: middleware:9092
       MODEL_FILE: /exec/data/STRE_Dummy
-      OUTPUT_TOPIC: EU_HUMANMANUFACTURING_STREOUT
-      SCHEMA_REGISTRY_PASSWORD: $BF_PASSWORD
-      SCHEMA_REGISTRY_URL: http://middleware:8081
-      SCHEMA_REGISTRY_USERNAME: $BF_USER
-      SCHEMA_TYP: EU_HUMANMANUFACTURING_STREOUT
+      DELAY_THRESHOLD: 2
       SLIDING_DURATION: 60
       WINDOW_DURATION: 60
+      DIGITAL_WORKPLACE_URL: http://models:8080/rest
+      DIGITAL_WORKPLACE_USER: $BF_USER
+      DIGITAL_WORKPLACE_PASSWORD: $BF_PASSWORD
+      MIDDLEWARE_URL: middleware:9092
+      INPUT_TOPIC: EU_HUMANMANUFACTURING_STREIN
+      OUTPUT_TOPIC: EU_HUMANMANUFACTURING_STREOUT
+      SCHEMA_REGISTRY_URL: http://middleware:8081
+      SCHEMA_REGISTRY_USERNAME: $BF_USER
+      SCHEMA_REGISTRY_PASSWORD: $BF_PASSWORD
+      SCHEMA_TYP: EU_HUMANMANUFACTURING_STREOUT
     restart: on-failure:10
     volumes:
       - fams_data:/exec/data:rw
@@ -28,14 +28,14 @@ services:
 
   kafka-message-model:
     container_name: kafka-message-model
-    image: registry.gitlab.com/isteps-sps-lab/human-robot-interaction/better-factory/kafka-message-model:0.1
+    image: docker.ramp.eu/supsi-pvt/kafka-message-model:0.1.0
     restart: on-failure
     volumes:
       - message_model:/schemas:rw
 
   middleware:
     container_name: middleware
-    image: registry.gitlab.com/isteps-sps-lab/human-robot-interaction/better-factory/middleware:0.1
+    image: docker.ramp.eu/supsi-pvt/middleware:0.1.1
     environment:
       ADV_HOST: middleware
       BROKER_PORT: 9092
@@ -56,7 +56,7 @@ services:
 
   models:
     container_name: models
-    image: registry.gitlab.com/complemant/integration/data-models:latest
+    image: docker.ramp.eu/betterfactory/data-models:1.0.0
     environment:
       ADMIN_PASSWORD: $BF_PASSWORD
       ADMIN_USERNAME: $BF_USER
@@ -72,7 +72,7 @@ services:
       MQTT_PORT: 1883
       MQTT_USER: $BF_USER
       MYSQL_DB: $MODELS_MYSQL_DATABASE
-      MYSQL_HOST: models_db
+      MYSQL_HOST: models-db
       MYSQL_PASS: $BF_PASSWORD
       MYSQL_PORT: 3306
       MYSQL_USER: $BF_USER
@@ -86,9 +86,9 @@ services:
       - ./init-data:/var/human/init-data:rw
     depends_on:
       - middleware
-      - models_db
+      - models-db
 
-  models_db:
+  models-db:
     container_name: models-db
     image: mysql:5.7
     environment:

@@ -10,8 +10,10 @@ software is required:
 
 !!! info
 
-    We tested our deployment on a machine running Ubuntu 21, with Docker
-    v20.10.8, and Docker Compose v1.29.2.
+    We tested our deployment on machines running different configurations:
+
+      - Ubuntu 21, Docker 20.10.8, Docker Compose 1.29.2
+      - Ubuntu 22, Docker  24.0.5, Docker Compose 2.20.2
 
 ## Install
 
@@ -20,16 +22,15 @@ While some images are publicly available, some other require credentials to be d
 
 !!! faq
 
-    Images provided by SUPSI can be download from the GitLab container registry,
-    which supports the token-based authentication. Please send your request for
-    a new token to the repository maintainers.
+    Images can be download from the RAMP Docker registry, which supports the token-based authentication. Please send your
+    request for a new token to the RAMP Docker registry maintainers.
 
 Once you are provided with a username and a token, you can issue the following
 command to login to the private GitLab Docker registry and download the images:
 
 ```shell
-docker login registry.example.com -u <username> -p <token>
-docker-compose pull
+docker login docker.ramp.eu -u <username> -p <token>
+docker-compose pull <image>:<tag>
 ```
 
 ## Usage
@@ -65,5 +66,4 @@ You can now access different components:
 ## Software Maintainers
 
 - Vincenzo Cutrona - <vincenzo.cutrona@supsi.ch>
-- Niko Bonomi - <niko.bonomi@supsi.ch>
 - Giuseppe Landolfi - <giuseppe.landolfi@supsi.ch>
